@@ -17,7 +17,7 @@ public class Parsers {
   
   public static String cepParse(Object CEP) {
     String str = removeNonNum(CEP.toString());
-    return str.length()==8? str:null;
+    return str.length()==8? str:null; 
   }
   
   public static String cpfParse(Object CPF) {
