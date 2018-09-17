@@ -11,6 +11,7 @@ public class Parsers {
     return str.replaceAll("\\D", "");
   }
   
+  
   public static String removeNonNum(Object str) {
     return removeNonNum(str.toString());
   }
