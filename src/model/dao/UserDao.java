@@ -34,7 +34,7 @@ public abstract class UserDao {
   }
 
   // Função para alterar um usuário
-  protected UserDao alterar(UserBean bean) throws SQLException {
+  public UserDao alterar(UserBean bean) throws SQLException {
 
     // Altera as informações do usuário no banco
     factory.updateStatement(bean).execute();
@@ -50,7 +50,7 @@ public abstract class UserDao {
   }
 
   // Função para obter um usuário
-  protected UserBean selecionar(int id) throws SQLException {
+  public UserBean selecionar(int id) throws SQLException {
 
     // Faz o query dos dados do usuário
     ResultSet rs = factory.selectStatement(id).executeQuery();
@@ -75,10 +75,11 @@ public abstract class UserDao {
 
           // Verifica se o nome da coluna é igual ao nome da coluna que a informação representa no
           // banco
-          if (info.getCampo().equals(colName))
+          if (info.getCampo().equals(colName)) {
             // Salva a informação no bean
             bean.setInfo(info, rs.getObject(i));
-          break;
+            break;
+          }
         }
       }
     }
