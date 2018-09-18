@@ -1,6 +1,7 @@
 package teste;
 
 import java.sql.SQLException;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import model.bean.EnderecoBean;
@@ -15,12 +16,12 @@ import model.dao.MedicoDao;
 public class Teste_Medico {
 
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws ParseException {
 
   }
 
   private static void selecionar(int id) {
-    
+
     try {
 
       new MedicoDao().selecionar(id);
@@ -31,36 +32,36 @@ public class Teste_Medico {
       e.printStackTrace();
     }
   }
-  
+
   private static void deletar(int id) {
-    
+
     try {
-      
+
       new MedicoDao().deletar(id);
     } catch (SQLException e) {
-      
+
       System.out.println("o mano deu erro");
       e.printStackTrace();
     }
   }
-  
+
   private static void alterar(int id) {
-    
+
     MedicoBean mb = new MedicoBean();
     mb.setInfo(UserInfo.ID, id);
     mb.setInfo(MedicoInfo.IDUser, id);
     mb.setInfo(UserInfo.Nome, "Gelson");
-    
+
     try {
-      
+
       new MedicoDao().alterar(mb);
     } catch (SQLException e) {
-      
+
       System.out.println("o mano deu erro");
       e.printStackTrace();
     }
   }
-  
+
   private static void cadastrar() {
 
     MedicoBean mb = new MedicoBean();
