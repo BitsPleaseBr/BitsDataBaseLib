@@ -8,7 +8,7 @@ public class Parsers {
   public static String removeNonNum(String str) {
     return str.replaceAll("\\D", "");
   }
-
+  
   public static String removeNonNum(Object str) {
     return removeNonNum(str.toString());
   }
